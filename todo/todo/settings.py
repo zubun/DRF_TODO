@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'usertodoapp',
 ]
 
+AUTH_USER_MODEL = 'usertodoapp.CustomUser'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
