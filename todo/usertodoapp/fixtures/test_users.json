@@ -1,0 +1,36 @@
+[
+
+    {
+        "model": "usertodoapp.CustomUser",
+        "pk": 2,
+        "fields": {
+            "password": "Users1",
+            "last_login": "2021-10-09T10:32:18.075Z",
+            "is_superuser": false,
+            "username": "Users1",
+            "first_name": "",
+            "last_name": "",
+            "email": "Users1@ya.ru",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2021-10-09T10:30:10.234Z"
+        }
+    },
+
+    {
+        "model": "usertodoapp.CustomUser",
+        "pk": 3,
+        "fields": {
+            "password": "Users2",
+            "last_login": "2021-10-09T10:32:18.075Z",
+            "is_superuser": false,
+            "username": "Users2",
+            "first_name": "",
+            "last_name": "",
+            "email": "Users2@ya.ru",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2021-10-09T10:30:10.234Z"
+        }
+    }
+]
