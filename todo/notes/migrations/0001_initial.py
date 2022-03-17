@@ -9,30 +9,31 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-    ]
+    dependencies = [migrations.swappable_dependency(settings.AUTH_USER_MODEL)]
 
     operations = [
         migrations.CreateModel(
-            name='Projects',
+            name="Projects",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=150)),
-                ('link', models.URLField()),
-                ('users', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("title", models.CharField(max_length=150)),
+                ("link", models.URLField()),
+                ("users", models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
-            name='Todo',
+            name="Todo",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=150)),
-                ('description', models.CharField(blank=True, max_length=400)),
-                ('date_create', models.DateTimeField(auto_now_add=True)),
-                ('date_update', models.DateTimeField(auto_now=True)),
-                ('done', models.BooleanField(default=False)),
-                ('project', models.ForeignKey(null=True, on_delete=django.db.models.deletion.PROTECT, to='notes.projects')),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("title", models.CharField(max_length=150)),
+                ("description", models.CharField(blank=True, max_length=400)),
+                ("date_create", models.DateTimeField(auto_now_add=True)),
+                ("date_update", models.DateTimeField(auto_now=True)),
+                ("done", models.BooleanField(default=False)),
+                (
+                    "project",
+                    models.ForeignKey(null=True, on_delete=django.db.models.deletion.PROTECT, to="notes.projects"),
+                ),
             ],
         ),
     ]

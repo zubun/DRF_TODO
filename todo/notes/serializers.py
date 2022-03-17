@@ -6,10 +6,10 @@ from .models import Todo, Projects
 class TodoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Todo
-        fields = '__all__'
+        fields = "__all__"
 
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Projects
-        fields = '__all__'
+        fields = "__all__"

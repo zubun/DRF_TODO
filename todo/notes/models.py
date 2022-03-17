@@ -17,7 +17,7 @@ class Todo(models.Model):
     date_create = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
     done = models.BooleanField(default=False, null=False)
-    project = models.ForeignKey('Projects', on_delete=models.PROTECT, null=True)
+    project = models.ForeignKey("Projects", on_delete=models.PROTECT, null=True)
 
     # def __str__(self):
     #     return self.title
