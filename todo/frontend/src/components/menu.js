@@ -1,36 +1,23 @@
 import React from 'react'
 
 
-// const Menu = ({User}) => {
-//    return (
-//        <tr>
-//            <td>
-//                {User.first_name}
-//            </td>
-//            <td>
-//                {User.last_name}
-//            </td>
-//            <td>
-//                {User.email}
-//            </td>
-//        </tr>
-//    )
-// }
-const Men = ({ObjectMen}) => {
+const Menu = ({ObjectMen}) => {
    return (
-       <ul className="menu">
-           <li>
-               Главная
+
+       <ul class="nav nav-tabs">
+           <li class="nav-item">
+               <a className="nav-link active" data-bs-toggle="tab" href="#">Главная</a>
            </li>
            <li>
-               Задачи
+                <a className="nav-link active" data-bs-toggle="tab" href="#">Задачи</a>
            </li>
            <li>
-               Контакты
+                <a className="nav-link active" data-bs-toggle="tab" href="#">Контакты</a>
            </li>
        </ul>
+
    )
 }
 
-export default Men
+export default Menu
 

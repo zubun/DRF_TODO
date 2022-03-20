@@ -8,12 +8,28 @@ import axios from "axios";
 import UserList from "./components/CustomUser.js";
 import Menu from "./components/menu.js";
 import {render} from "react-dom";
+import Footers from "./components/footer";
+
+
+// function Menu(props) {
+//     // props.ObjectMen = Men;
+//     {
+//        return (
+//            <head>
+//                <title><Menu ObjectMenu={props} /></title>
+//            </head>
+//
+//        );
+//    }
+// }
 
 class App extends React.Component{
     constructor(props) {
         super(props)
         this.state = {
             'CustomUser':[]
+            // 'ObjectMen':[]
+
         }
     }
     componentDidMount() {
@@ -38,10 +54,16 @@ class App extends React.Component{
    }
    render () {
        return (
-           <div>
-               <UserList CustomUser={this.state.CustomUser} />
-           </div>
+            <React.Fragment>
 
+                {/*<title><Menu ObjectMenu={this.state.ObjectMen} /></title>*/}
+                <Menu/>
+
+                <div>
+                <UserList CustomUser={this.state.CustomUser} />
+                </div>
+                <Footers/>
+            </React.Fragment>
 
        );
    }
@@ -50,17 +72,6 @@ class App extends React.Component{
 export default App;
 
 
-function Men(props) {
-    props.ObjectMen = undefined;
-    {
-       return (
-           <head>
-               <title><Menu ObjectMenu={props.ObjectMen} /></title>
-           </head>
-
-       );
-   }
-}
 
 
 // export default Men;

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "usertodoapp",
     "corsheaders",
+    "notes",
 ]
 
 AUTH_USER_MODEL = "usertodoapp.CustomUser"
