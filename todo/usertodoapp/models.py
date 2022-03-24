@@ -9,10 +9,10 @@ class CustomUser(AbstractUser):
     # username = None
     email = models.EmailField(_("email address"), unique=True)
 
-    USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = []
-
-    objects = CustomUserManager()
+    # USERNAME_FIELD = "email"
+    # REQUIRED_FIELDS = []
+    #
+    # objects = CustomUserManager()
 
     def __str__(self):
-        return self.email
+        return f"{self.email} | {self.username}"
