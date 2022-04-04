@@ -10,15 +10,15 @@ from .filters import ProjectFilter, TodoFilter
 from django_filters import rest_framework as filters
 
 
-class ProjectLimitOffsetPagination(LimitOffsetPagination):
-    default_limit = 2
+# class ProjectLimitOffsetPagination(LimitOffsetPagination):
+#     default_limit = 2
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
     renderer_classes = [JSONRenderer, BrowsableAPIRenderer, StaticHTMLRenderer, AdminRenderer]
     queryset = Projects.objects.all()
     serializer_class = ProjectsSerializer
-    pagination_class = ProjectLimitOffsetPagination
+    # pagination_class = ProjectLimitOffsetPagination
     # filter_backends = (filters.DjangoFilterBackend,)
     # filterset_fields = ['title']
     filter_class = ProjectFilter
@@ -30,15 +30,15 @@ class ProjectViewSet(viewsets.ModelViewSet):
 #     serializer_class = ProjectsSerializer
 
 
-class TodoLimitOffsetPagination(LimitOffsetPagination):
-    default_limit = 20
+# class TodoLimitOffsetPagination(LimitOffsetPagination):
+#     default_limit = 20
 
 
 class TodoViewSet(viewsets.ModelViewSet):
     renderer_classes = [JSONRenderer, BrowsableAPIRenderer, StaticHTMLRenderer, AdminRenderer]
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
-    pagination_class = TodoLimitOffsetPagination
+    # pagination_class = TodoLimitOffsetPagination
     # filter_backends = (filters.DjangoFilterBackend,)
     # filterset_fields = ['title', 'project', 'user', 'done']
     filter_class = TodoFilter
