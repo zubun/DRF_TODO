@@ -1,11 +1,12 @@
-import React from 'react'
-
+import React from 'react';
+import {Link} from "react-router-dom";
 
 const ProjectsItem = ({Projects,users}) => {
    return (
        <tr>
            <td>
-               {Projects.id}
+               <Link to={`/Projects/${Projects.id}`}>{Projects.id}</Link>
+               {/*{Projects.id}*/}
            </td>
            <td>
                {Projects.title}
@@ -14,14 +15,14 @@ const ProjectsItem = ({Projects,users}) => {
                {Projects.link}
            </td>
             <td>
-
+               {Projects.users}
                 {/*{Projects.users.map((users) => {*/}
                 {/*    let user = users.find(user) => CustomUser.username === users )*/}
                 {/*    if(user){*/}
                 {/*        return CustomUser.username*/}
                 {/*    }*/}
                 {/*})}*/}
-               {Projects.users}
+
            </td>
        </tr>
    )
