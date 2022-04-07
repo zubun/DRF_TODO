@@ -8,6 +8,7 @@ from .serializers import TodoSerializer, ProjectsSerializer
 from rest_framework.pagination import LimitOffsetPagination
 from .filters import ProjectFilter, TodoFilter
 from django_filters import rest_framework as filters
+from rest_framework.permissions import IsAuthenticated, AllowAny
 
 
 # class ProjectLimitOffsetPagination(LimitOffsetPagination):
@@ -42,6 +43,7 @@ class TodoViewSet(viewsets.ModelViewSet):
     # filter_backends = (filters.DjangoFilterBackend,)
     # filterset_fields = ['title', 'project', 'user', 'done']
     filter_class = TodoFilter
+    permission_classes = [AllowAny]
 
     def destroy(self, request, *args, **kwargs):
         instance = self.get_object()
