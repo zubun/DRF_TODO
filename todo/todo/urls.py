@@ -22,6 +22,7 @@ from usertodoapp.views import UserCustomViewSet
 
 # from usertodoapp.views import UserModelViewSet
 from notes.views import TodoViewSet, ProjectViewSet
+from rest_framework.authtoken import views
 
 router = DefaultRouter()
 router.register("users", UserCustomViewSet)
@@ -33,4 +34,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # path('api-usertodoapp/', include('rest_framework')),
     path("api/", include(router.urls)),
+    path("api-token-auth/", views.obtain_auth_token),
 ]

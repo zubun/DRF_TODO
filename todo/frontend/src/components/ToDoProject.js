@@ -1,6 +1,9 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import ToDo from "./ToDo";
+import ToDoList from "./ToDo";
+import Project from "./Project";
+import project from "./Project";
+
 
 const ToDoItem = ({ToDo}) => {
    return (
@@ -32,11 +35,10 @@ const ToDoItem = ({ToDo}) => {
        </tr>
    )
 }
-const UserToDoList = ({ToDo}) => {
-   console.log(ToDo)
-   let { id } = useParams();
-   let filter_todo = ToDo.filter(ToDo => ToDo.CustomUser.includes(parseInt(id)))
-    console.log(filter_todo)
+const ToDoProjectList = ({Projects}) => {
+    let { id } = useParams();
+    // let filter_item = ProjectRange.filter((project => project.user.includes(parseInt(id))))
+    let filter_item = Project.filter((project) => project.CustomUser.id === id)
     return (
        <table>
            <th>
@@ -63,11 +65,9 @@ const UserToDoList = ({ToDo}) => {
            {/*<th>*/}
            {/*    date_update*/}
            {/*</th>*/}
-           {/*{ToDo.map((ToDo) => <ToDoItem ToDo={ToDo} />)}*/}
-           {filter_todo.map((ToDo) => <ToDoItem ToDo={ToDo}/>)}
-
+           {filter_item.map((ToDo) => <ToDoItem ToDo={ToDo} />)}
        </table>
    )
 }
 
-export default UserToDoList
+export default ToDoProjectList

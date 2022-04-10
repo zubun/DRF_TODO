@@ -8,6 +8,7 @@ import Menu from "./components/menu.js";
 import {render} from "react-dom";
 import Footers from "./components/footer";
 import ProjectsList from "./components/Project";
+import ToDoProjectList from "./components/ToDoProject";
 import ToDoList from "./components/ToDo";
 import UserToDoList from "./components/UserToDo.js";
 
@@ -83,10 +84,16 @@ class App extends React.Component{
                 <Route exact path='/userlist' component={() => <UserList CustomUser={this.state.CustomUser} />} />
                 <Route exact path='/Projects' component={() => <ProjectsList Projects={this.state.Projects} />} />
                 <Route exact path='/ToDo' component={() => <ToDoList ToDo={this.state.ToDo} />} />
+                <Route exact path='/ToDoProject' component={() => <ToDoList ToDo={this.state.ToDo} />} />
 
                 <Route path='/userlist/:id'>
                     <UserToDoList Todo={this.state.ToDo} />}
                 </Route>
+
+                <Route path='/Projects/:id'>
+                    <ToDoProjectList Projects={this.state.Projects} />}
+                </Route>
+
                 {/*CustomUser={this.state.CustomUser}*/}
                 </BrowserRouter>
                 <div>
